@@ -106,11 +106,11 @@ Options:
 - [x] tsconfig.json (ES2022, strict, bundler resolution)
 - [x] tsup.config.ts (라이브러리 + CLI 이중 빌드)
 - [x] .nvmrc (v22)
-- [ ] src/index.ts (countTokens, countFileTokens export)
-- [ ] src/commands/count.ts (citty defineCommand)
-- [ ] src/cli.ts (citty runMain)
-- [ ] pnpm install + pnpm build 검증
-- [ ] 실제 파일로 동작 검증
+- [x] src/index.ts (countTokens, countFileTokens export)
+- [x] src/commands/count.ts (citty defineCommand)
+- [x] src/cli.ts (citty runMain)
+- [x] pnpm install + pnpm build 검증
+- [x] 실제 파일로 동작 검증
 
 ## 출력 형식
 

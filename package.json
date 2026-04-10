@@ -1,5 +1,5 @@
 {
-  "name": "tokenman",
+  "name": "tkm",
   "version": "0.0.1",
   "description": "File-based token counter CLI powered by tiktoken",
   "type": "module",
@@ -11,9 +11,9 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs"
     }
   },
   "scripts": {
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.11",
+    "@types/node": "^25.5.2",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
   },

@@ -5,8 +5,8 @@
 파일 경로(또는 glob 패턴)를 입력받아 OpenAI 토크나이저 기준 토큰 수를 계산하는 Node.js CLI 도구.
 
 ```bash
-npx tokenman ./some-file.txt
-npx tokenman "src/**/*.ts" --model gpt-4o
+npx tkm ./some-file.txt
+npx tkm "src/**/*.ts" --model gpt-4o
 ```
 
 ## 문제 정의
@@ -20,14 +20,14 @@ npx tokenman "src/**/*.ts" --model gpt-4o
 ### 1. 단일 파일 토큰 카운트
 
 ```bash
-$ tokenman ./README.md
+$ tkm ./README.md
 README.md    342 tokens (gpt-4o)
 ```
 
 ### 2. 여러 파일 / glob 패턴
 
 ```bash
-$ tokenman "src/**/*.ts"
+$ tkm "src/**/*.ts"
  src/cli.ts        142 tokens
  src/index.ts       87 tokens
 ─────────────────────────────
@@ -37,7 +37,7 @@ $ tokenman "src/**/*.ts"
 ### 3. 모델 지정
 
 ```bash
-$ tokenman ./file.txt --model gpt-4o-mini
+$ tkm ./file.txt --model gpt-4o-mini
 ```
 
 지원 모델: `gpt-4o` (기본값), `gpt-4o-mini`, `gpt-4`, `gpt-3.5-turbo`
@@ -88,7 +88,7 @@ export function countFileTokens(filePath: string, model?: string): Promise<Token
 ### CLI 인터페이스
 
 ```
-tokenman <files...> [options]
+tkm <files...> [options]
 
 Arguments:
   files          파일 경로 또는 glob 패턴 (필수, 복수 가능)
@@ -102,10 +102,10 @@ Options:
 
 ## 구현 체크리스트
 
-- [ ] package.json (name, type: module, bin, scripts)
-- [ ] tsconfig.json (ES2022, strict, bundler resolution)
-- [ ] tsup.config.ts (라이브러리 + CLI 이중 빌드)
-- [ ] .nvmrc (v22)
+- [x] package.json (name, type: module, bin, scripts)
+- [x] tsconfig.json (ES2022, strict, bundler resolution)
+- [x] tsup.config.ts (라이브러리 + CLI 이중 빌드)
+- [x] .nvmrc (v22)
 - [ ] src/index.ts (countTokens, countFileTokens export)
 - [ ] src/commands/count.ts (citty defineCommand)
 - [ ] src/cli.ts (citty runMain)
@@ -144,7 +144,7 @@ README.md    342 tokens (gpt-4o)
 
 ## 향후 확장 가능성
 
-- stdin 파이프 입력 (`cat file.txt | tokenman`)
+- stdin 파이프 입력 (`cat file.txt | tkm`)
 - Claude 모델 토크나이저 지원
 - 비용 계산 옵션 (`--cost --price-per-1m 0.15`)
 - watch 모드 (`--watch`)

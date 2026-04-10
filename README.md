@@ -1,4 +1,4 @@
-# tkm
+# tiktokenman
 
 File-based token counter CLI powered by [tiktoken](https://github.com/openai/tiktoken).
 
@@ -7,13 +7,13 @@ Count tokens in any file before sending to an LLM API — know the cost before y
 ## Install
 
 ```bash
-npm i -g tkm
+npm i -g tiktokenman
 ```
 
 Or run directly:
 
 ```bash
-npx tkm count ./file.txt
+npx tiktokenman count ./file.txt
 ```
 
 ## Usage
@@ -21,14 +21,14 @@ npx tkm count ./file.txt
 ### Single file
 
 ```bash
-$ tkm count ./README.md
+$ tiktokenman count ./README.md
 README.md    342 tokens (gpt-4o)
 ```
 
 ### Multiple files / glob patterns
 
 ```bash
-$ tkm count "src/**/*.ts"
+$ tiktokenman count "src/**/*.ts"
  src/cli.ts              83 tokens
  src/commands/count.ts  559 tokens
  src/index.ts           176 tokens
@@ -39,7 +39,7 @@ $ tkm count "src/**/*.ts"
 ### Specify model
 
 ```bash
-$ tkm count ./file.txt --model gpt-4o-mini
+$ tiktokenman count ./file.txt --model gpt-4o-mini
 ```
 
 Supported models: `gpt-4o` (default), `gpt-4o-mini`, `gpt-4`, `gpt-3.5-turbo`
@@ -47,7 +47,7 @@ Supported models: `gpt-4o` (default), `gpt-4o-mini`, `gpt-4`, `gpt-3.5-turbo`
 ### JSON output
 
 ```bash
-$ tkm count "src/**/*.ts" --json
+$ tiktokenman count "src/**/*.ts" --json
 ```
 
 ```json
@@ -74,7 +74,7 @@ $ tkm count "src/**/*.ts" --json
 ## Programmatic API
 
 ```typescript
-import { countTokens, countFileTokens } from "tkm";
+import { countTokens, countFileTokens } from "tiktokenman";
 
 // Count tokens from text
 const tokens = countTokens("Hello, world!", "gpt-4o");

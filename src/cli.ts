@@ -3,7 +3,7 @@ import { countCommand } from "./commands/count.js";
 
 const main = defineCommand({
 	meta: {
-		name: "tkm",
+		name: "tiktokenman",
 		description: "File-based token counter powered by tiktoken",
 		version: "0.0.1",
 	},

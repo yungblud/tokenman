@@ -1,10 +1,10 @@
 {
-  "name": "tkm",
+  "name": "tiktokenman",
   "version": "0.0.1",
   "description": "File-based token counter CLI powered by tiktoken",
   "type": "module",
   "bin": {
-    "tkm": "./dist/cli.js"
+    "tiktokenman": "./dist/cli.js"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
